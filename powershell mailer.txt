@@ -1,0 +1,17 @@
+$email = "toolsondesk@outlook.com" 
+$pass = "bigmoney4110" 
+$to = "kimkay411@outlook.com" 
+$smtpServer = "smtp.outlook.com" 
+$msg = new-object Net.Mail.MailMessage 
+$smtp = new-object Net.Mail.SmtpClient($smtpServer) 
+$smtp.EnableSsl = $true 
+$msg.From = "$email"  
+$msg.To.Add("$to") 
+$msg.BodyEncoding = [system.Text.Encoding]::Unicode 
+$msg.SubjectEncoding = [system.Text.Encoding]::Unicode 
+$msg.IsBodyHTML = $true  
+$msg.Subject = "Email Subject" 
+$msg.Body = " <h1> i love tawio</h1> 
+"  
+$SMTP.Credentials = New-Object System.Net.NetworkCredential("$email", "$pass"); 
+$smtp.Send($msg)
